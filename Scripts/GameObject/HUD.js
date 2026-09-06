@@ -106,16 +106,16 @@ class HUDGun {
         let text
         if (this.curr_gun.currentMagazineAmmo === 0 && this.curr_gun.currentReloadTime <= 0) {
             if (this.curr_gun.currentTotalAmmo === 0) {
-                text = "Empty"
+                text = "Пусто"
             } else {
-                text = "(R to Reload) " + this.curr_gun.currentMagazineAmmo + " / " + this.curr_gun.currentTotalAmmo
+                text = "(R - Перезарядка) " + this.curr_gun.currentMagazineAmmo + " / " + this.curr_gun.currentTotalAmmo
             }
             GAME_ENGINE.ctx.font = 'bold 60px arial'
         } else if (this.curr_gun.currentReloadTime <= 0) {
             text = this.curr_gun.currentMagazineAmmo + " / " + this.curr_gun.currentTotalAmmo
             GAME_ENGINE.ctx.font = 'bold 60px arial'
         } else if (!this.curr_gun.isSwitching) {
-            text = "RELOADING"
+            text = "ПЕРЕЗАРЯДКА"
             GAME_ENGINE.ctx.font = 'bold 40px arial'
         } else {
             text = this.curr_gun.name
