@@ -327,13 +327,13 @@ class OptionsMenu extends FrontEnd {
         this.cursor = cursor
         
         this.labelText = [
-            "Aspect Ratio (Windowed):",
-            "Zombie concurrent amount:", 
-            "Always run zombie:", 
-            "No spawn delay:",
-            "Starting points:",
-            "Starting round:",
-            "Cheats:"
+            "Формат экрана (В окне):",
+            "Количество зомби разом:", 
+            "Зомби всегда бегут:", 
+            "Появление без задержки:",
+            "Стартовые очки:",
+            "Стартовый раунд:",
+            "Читы:"
         ]
         this.labels = []
 
@@ -402,8 +402,8 @@ class OptionsMenu extends FrontEnd {
         }
 
         index++
-        let alwaysRunT = new GeneralButton("True", "Zombies will always spawn at fastest speed. (DEFAULT: False)", 850 + this.getTextSize(this.labelText[index]) + 20, 260 + (index * 150));
-        let alwaysRunF = new GeneralButton("False", "Zombies speed is increased at higher rounds. (DEFAULT: False)", 850 + this.getTextSize(this.labelText[index]) + this.getTextSize("True") + 60, 260 + (index * 150));
+        let alwaysRunT = new GeneralButton("True", "Зомби всегда появляются на максимальной скорости. (По умолч: Выкл)", 850 + this.getTextSize(this.labelText[index]) + 20, 260 + (index * 150));
+        let alwaysRunF = new GeneralButton("False", "Скорость зомби увеличивается с каждым раундом. (По умолч: Выкл)", 850 + this.getTextSize(this.labelText[index]) + this.getTextSize("True") + 60, 260 + (index * 150));
 
         alwaysRunT.setSelected(GAME_ENGINE.options.mainMenu_options_zombiesAlwaysRun)
         alwaysRunF.setSelected(!GAME_ENGINE.options.mainMenu_options_zombiesAlwaysRun)
