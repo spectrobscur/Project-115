@@ -402,8 +402,8 @@ class OptionsMenu extends FrontEnd {
         }
 
         index++
-        let alwaysRunT = new GeneralButton("True", "Зомби всегда появляются на максимальной скорости. (По умолч: Выкл)", 850 + this.getTextSize(this.labelText[index]) + 20, 260 + (index * 150));
-        let alwaysRunF = new GeneralButton("False", "Скорость зомби увеличивается с каждым раундом. (По умолч: Выкл)", 850 + this.getTextSize(this.labelText[index]) + this.getTextSize("True") + 60, 260 + (index * 150));
+        let alwaysRunT = new GeneralButton("Вкл", "Зомби всегда появляются на максимальной скорости. (По умолч: Выкл)", 850 + this.getTextSize(this.labelText[index]) + 20, 260 + (index * 150));
+        let alwaysRunF = new GeneralButton("Выкл", "Скорость зомби увеличивается с каждым раундом. (По умолч: Выкл)", 850 + this.getTextSize(this.labelText[index]) + this.getTextSize("True") + 60, 260 + (index * 150));
 
         alwaysRunT.setSelected(GAME_ENGINE.options.mainMenu_options_zombiesAlwaysRun)
         alwaysRunF.setSelected(!GAME_ENGINE.options.mainMenu_options_zombiesAlwaysRun)
@@ -425,8 +425,8 @@ class OptionsMenu extends FrontEnd {
         }
 
         index++
-        let spawnDelayT = new GeneralButton("True", "Zombies will spawn as fast as possible. (DEFAULT: False)", 850 + this.getTextSize(this.labelText[index]) + 20, 260 + (index * 150));
-        let spawnDelayF = new GeneralButton("False", "Zombies will increasing spawn faster at higher rounds. (DEFAULT: False)", 850 + this.getTextSize(this.labelText[index]) + this.getTextSize("True") + 60, 260 + (index * 150));
+        let spawnDelayT = new GeneralButton("Вкл", "Зомби будут появляться максимально быстро. (По умолч: Выкл)", 850 + this.getTextSize(this.labelText[index]) + 20, 260 + (index * 150));
+        let spawnDelayF = new GeneralButton("Выкл", "Скорость появления зомби увеличивается с каждым раундом. (По умолч: Выкл)", 850 + this.getTextSize(this.labelText[index]) + this.getTextSize("True") + 60, 260 + (index * 150));
 
         spawnDelayT.setSelected(GAME_ENGINE.options.mainMenu_options_zombiesSpawnDelay)
         spawnDelayF.setSelected(!GAME_ENGINE.options.mainMenu_options_zombiesSpawnDelay)
@@ -449,9 +449,9 @@ class OptionsMenu extends FrontEnd {
 
         index++
         let startingMoneyValue = GAME_ENGINE.options.mainMenu_options_startingMoney;
-        let startingMoneyPlus = new GeneralButton("+", "Increase starting points (DEFAULT: 500)", 850 + this.getTextSize(this.labelText[index]) + 20, 260 + (index * 150));
+        let startingMoneyPlus = new GeneralButton("+", "Увеличить стартовые очки. (По умолч: 500)", 850 + this.getTextSize(this.labelText[index]) + 20, 260 + (index * 150));
         let startingMoney = new GeneralButton(startingMoneyValue, "(DEFAULT: 500)", 850 + this.getTextSize(this.labelText[index]) + 80, 260 + (index * 150), false);
-        let startingMoneyMinus = new GeneralButton("-", "Increase starting points (DEFAULT: 500)", 850 + this.getTextSize(this.labelText[index]) + 80 + this.getTextSize(startingMoneyValue) + 25, 260 + (index * 150));
+        let startingMoneyMinus = new GeneralButton("-", "Уменьшить стартовые очки. (По умолч: 500)", 850 + this.getTextSize(this.labelText[index]) + 80 + this.getTextSize(startingMoneyValue) + 25, 260 + (index * 150));
 
 
         startingMoneyPlus.use = function() {
@@ -483,9 +483,9 @@ class OptionsMenu extends FrontEnd {
 
         index++
         let startingRoundValue = GAME_ENGINE.options.mainMenu_options_zombiesStartingRound;
-        let startingRoundPlus = new GeneralButton("+", "Increase starting round. (DEFAULT: 1)", 850 + this.getTextSize(this.labelText[index]) + 20, 260 + (index * 150));
+        let startingRoundPlus = new GeneralButton("+", "Изменить стартовый раунд. (По умолч: 1)", 850 + this.getTextSize(this.labelText[index]) + 20, 260 + (index * 150));
         let startingRound = new GeneralButton(startingRoundValue, "(DEFAULT: 1)", 850 + this.getTextSize(this.labelText[index]) + 80, 260 + (index * 150), false);
-        let startingRoundMinus = new GeneralButton("-", "Decrease starting round. (DEFAULT: 1)", 850 + this.getTextSize(this.labelText[index]) + 80 + this.getTextSize(startingRoundValue) + 25, 260 + (index * 150));
+        let startingRoundMinus = new GeneralButton("-", "Уменьшить стартовый раунд. (По умолч: 1)", 850 + this.getTextSize(this.labelText[index]) + 80 + this.getTextSize(startingRoundValue) + 25, 260 + (index * 150));
 
 
         startingRoundPlus.use = function() {
@@ -889,7 +889,7 @@ class GeneralButtonMap extends GeneralButton {
 
 class OptionsButton extends Button {
     constructor() {
-        super(FE_Y_BUTTON + 100, "Options", "Configure options of gameplay.");
+        super(FE_Y_BUTTON + 100, "Настройки", "Настройка игрового процесса.");
     }
 
     use() {
@@ -900,7 +900,7 @@ class OptionsButton extends Button {
 
 class ControlsButton extends Button {
     constructor() {
-        super(FE_Y_BUTTON + 200, "Show Controls", "Show the controls to the game.");
+        super(FE_Y_BUTTON + 200, "Управление", "Показать клавиши управления игрой.");
     }
 
     use() {
@@ -910,7 +910,7 @@ class ControlsButton extends Button {
 
 class PlayButton extends Button {
     constructor() {
-        super(FE_Y_BUTTON, "Play", "Choose the map and play.");
+        super(FE_Y_BUTTON, "Играть", "Выбрать карту и начать игру.");
     }
 
     use() {
@@ -922,7 +922,7 @@ class PlayButton extends Button {
 
 class FullscreenButton extends Button {
     constructor(posY) {
-        super(posY, "Fullscreen Toggle", "Make the canvas fit your browser window. (zooming in & out will change FOV, use with discretion)");
+        super(posY, "Во весь экран", "Растянуть игру на весь экран браузера. (Увеличение и уменьшение масштаба, используйте с осторожностью.)");
     }
 
     use() {
@@ -946,7 +946,7 @@ class FullscreenButton extends Button {
 
 class ResumeButton extends Button {
     constructor(posY) {
-        super(posY, "Resume", "Return to the game.");
+        super(posY, "Продолжить", "Вернуться в игру.");
     }
 
     use() {
@@ -969,7 +969,7 @@ class ResumeButton extends Button {
 
 class ExitButton extends Button {
     constructor(posY) {
-        super(posY, "End Game", "Return to main menu.");
+        super(posY, "Конец Игры", "Вернуться в главное меню.");
     }
 
     use() {
@@ -1125,7 +1125,7 @@ class RestartScreen extends ReturnScreen {
 
 class DownloadAllSoundButton extends Button {
     constructor(posY, bottomDesc) {
-        super(posY, "Download All Audio", "Download all sounds now, removing on demand download delay.")
+        super(posY, "Скачать все аудио", "Скачать звуки, Загрузить все аудиофайлы сразу для игры без задержек.")
         this.done = false
         this.bottomDesc = bottomDesc
     }
@@ -1474,7 +1474,7 @@ const ASSETS_AUDIO_LIST = [
 
 class Credits extends Button {
     constructor(posY, bottomDesc) {
-        super(posY, "Credits", "Display credits of the game.");
+        super(posY, "Авторы", "Посмотреть создателей игры.");
     }
 
     use() {
